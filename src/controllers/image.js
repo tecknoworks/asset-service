@@ -17,7 +17,7 @@ module.exports = {
         image.mv(imagePath, function (err) {
             if (err)
                 return res.status(500).send(err);
-            res.send('File uploaded!');
+            res.send(`File ${fileName} uploaded!`);
         });
     }
 }

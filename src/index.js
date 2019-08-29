@@ -5,6 +5,18 @@ const path = require('path')
 const serveStatic = require('serve-static')
 const fileUpload = require('express-fileupload');
 const logger = require('morgan');
+const fs = require('fs');
+
+const assetsFolder = `${__dirname}/assets`;
+const imagesFolder = `${__dirname}/assets/images`;
+if(!fs.existsSync(assetsFolder)){
+    fs.mkdirSync(assetsFolder);
+    fs.mkdirSync(imagesFolder);
+}else{
+    if(!fs.existsSync(imagesFolder)){
+        fs.mkdirSync(imagesFolder);
+    }
+}
 
 const app = express()
 
